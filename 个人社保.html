@@ -8,6 +8,37 @@
 			 
 			<!-- 最新的 Bootstrap5 核心 JavaScript 文件 -->
 			<script src="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+			<script>
+				function calc(){
+					sal=document.getElementById("salary").value;
+					salnum=parseInt(sal);//把取出来的字符串变成数字
+					ylgr=salnum*0.08;
+					ylgs=salnum*0.2;
+					document.getElementById("ylgr").innerText=ylgr;
+					document.getElementById("ylgs").innerText=ylgs;
+					ybgr=salnum*0.02;
+					ybgs=salnum*0.06;
+					document.getElementById("ybgr").innerText=ybgr;
+					document.getElementById("ybgs").innerText=ybgs;
+					sygr=salnum*0.005;
+					sygs=salnum*0.015;
+					document.getElementById("sygr").innerText=sygr;
+					document.getElementById("sygs").innerText=sygs;
+					gsgs=salnum*0.005;
+					document.getElementById("gsgs").innerText=gsgs;
+					sygs1=salnum*0.008;
+					document.getElementById("sygs1").innerText=sygs1;
+					gjjgr=salnum*0.12;
+					gjjgs=salnum*0.12;
+					document.getElementById("gjjgr").innerText=gjjgr;
+					document.getElementById("gjjgs").innerText=gjjgs;
+					document.getElementById("hjgr").innerText=ylgr+ybgr+sygr+gjjgr;
+					document.getElementById("hjgs").innerText=ylgs+ybgs+sygs1+sygs+gsgs+gjjgs;
+					hjgr=ylgr+ybgr+sygr+gjjgr;
+					hjgs=ylgs+ybgs+sygs+sygs1+gsgs+gjjgs;
+					document.getElementById("ze").innerText=hjgr+hjgs;
+				}
+			</script>
 	</head>
 	<body>
 		<div class="container text-center">
@@ -19,7 +50,7 @@
 						<input class="form-control" type="text" id="salary" placeholder="请输入工资"/>
 					</td>
 					<td>
-						<button class="btn-danger btn-clock">计算</button>
+						<button onclick="calc()" class="btn-danger btn-clock">计算</button>
 					</td>
 				</tr>
 				<tr class="bg-primary text-white">
@@ -32,54 +63,54 @@
 				<tr>
 					<td>养老</td>
 					<td>8%</td>
-					<td></td>
+					<td id="ylgr"></td>
 					<td>20%</td>
-					<td></td>
+					<td id="ylgs"></td>
 				</tr>
 				<tr>
 					<td>医保</td>
 					<td>2%</td>
-					<td></td>
+					<td id="ybgr"></td>
 					<td>6%</td>
-					<td></td>
+					<td id="ybgs"></td>
 				</tr>
 				<tr>
 					<td>失业</td>
 					<td>0.5%</td>
-					<td></td>
+					<td id="sygr"></td>
 					<td>1.5%</td>
-					<td></td>
+					<td id="sygs"></td>
 				</tr>
 				<tr>
 					<td>工伤</td>
-					<td></td>
-					<td></td>
+					<td>0</td>
+					<td>0</td>
 					<td>0.5%</td>
-					<td></td>
+					<td id="gsgs"></td>
 				</tr>
 				<tr>
 					<td>生育</td>
-					<td><td>
-					<td></td>
+					<td>0</td>
+					<td>0</td>
 					<td>0.8%</td>
-					<td></td>
+					<td id="sygs1"></td>
 				</tr>
 				<tr>
 					<td>公积金</td>
 					<td>12%</td>
-					<td></td>
+					<td id="gjjgr"></td>
 					<td>12%</td>
-					<td></td>
+					<td id="gjjgs"></td>
 				</tr>
 				<tr>
-					<td>合计<td>
+					<td>合计</td>
 					<td>个人合计</td>
-					<td></td>
+					<td id="hjgr"></td>
 					<td>公司合计</td>
-					<td></td>
+					<td id="hjgs"></td>
 				<tr>
 					<td>总额</td>
-					<td colspan="4"></td>
+					<td id="ze" colspan="4"></td>
 				</tr>
 			</table>
 		</div>
